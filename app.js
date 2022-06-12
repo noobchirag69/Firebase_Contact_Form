@@ -1,3 +1,4 @@
+// Configuring Firebase
 const firebaseConfig = {
     apiKey: "AIzaSyDk273lPBWt6ejpTT5wjsR0NpHrH3JdmH0",
     authDomain: "contact-form-7ad80.firebaseapp.com",
@@ -14,14 +15,39 @@ firebase.initializeApp(firebaseConfig);
 // Referencing Database
 let contactFormDB = firebase.database().ref('contactForm');
 
-document.getElementById('contact-form').addEventListener('submit', submitForm);
+document.getElementById('contactForm').addEventListener('submit', submitForm);
 
+// Submit the form
 function submitForm(e) {
     e.preventDefault();
+
     let name = getElementVal('name');
     let email = getElementVal('email');
     let message = getElementVal('message');
+
+    saveMessages(name, email, message);
+
+    // Enable Alert
+    document.getElementById('alert').style.display = 'block';
+
+    // Remove Alert
+    setTimeout(() => {
+        document.getElementById('alert').style.display = 'none';
+    }, 3000);
+
+    // Reset the form
+    document.getElementById('contactForm').reset();
 }
+
+// Saving the messages
+const saveMessages = (name, email, message) => {
+    let newContactForm = contactFormDB.push();
+    newContactForm.set({
+        name: name,
+        email: email,
+        message: message
+    })
+};
 
 const getElementVal = (id) => {
     return document.getElementById(id).value;

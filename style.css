@@ -36,4 +36,8 @@ hr {
     button {
         width: 100%;
     }
+
+    .alert {
+        background-color: aliceblue;
+    }
 }
