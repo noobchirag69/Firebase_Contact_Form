@@ -1,2 +1,2 @@
-# Firebase_Chatroom
-A realtime chatroom created using React and Firebase
+# Firebase_Contact_Form
+A simple contact form integrated with Firebase.
