@@ -1,0 +1,39 @@
+body {
+    background-color: aquamarine;
+}
+
+.container {
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: aliceblue;
+    padding: 20px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+h1 {
+    text-align: center;
+}
+
+hr {
+    background-color: black;
+}
+
+.alert {
+    width: 100%;
+    background-color: aquamarine;
+    text-align: center;
+    margin-top: 20px;
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+    .container {
+        background-color: aquamarine;
+        border: none;
+    }
+
+    button {
+        width: 100%;
+    }
+}
